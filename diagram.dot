@@ -1,22 +1,40 @@
 digraph WMF {
-  splines=true;
-  sep = 1;
   node [shape=box];
   subgraph web_traffic {
     the_internet -> ssl_terminators;
     the_internet -> frontend_varnish [style=dashed];
     ssl_terminators -> frontend_varnish;
     frontend_varnish -> backend_varnish [style=tapered, penwidth=10, arrowhead=none];
-    backend_varnish -> {web:apache, api:hhvm};
-    {web:hhvm, api:hhvm} -> {mysql_master, mysql_slave, redis, elasticsearch, swift};
-    {web:hhvm, api:hhvm} -> memcached [style=tapered, penwidth=10, arrowhead=none];
+    backend_varnish -> {web, api} [headport="apache:n"];
+    {web, api} -> web_service_collector [tailport="hhvm:s"];
+    web_service_collector [shape=point, width=0];
+    web_service_collector -> {mysql_master, mysql_slave, redis, elasticsearch, swift} [headport="n"];
+    web_service_collector -> memcached [style=invis];
+    {web, api} -> memcached [tailport="hhvm:s", headport="n", style=tapered, penwidth=10, arrowhead=none];
     elasticsearch -> elasticsearch [style=tapered, penwidth=10, arrowhead=none];
   }
   subgraph jobs {
-    // These arrows are reversed so dot will throw these nodes under the web_traffic ones
-    edge [color="#8800cc", dir="back"]
-    {mysql_master, mysql_slave, redis, elasticsearch} -> jobrunner;
-    {mysql_master, mysql_slave, swift} -> imagescaler;
+    edge [color="#8800cc", constraint=false, tailport=n, headport=s]
+    // These edge defines all the layout
+    subgraph layout {
+      edge [style=invis, constraint=true];
+      {mysql_master, mysql_slave, redis, swift} -> job_service_collector -> {jobrunner, imagescaler};
+      {mysql_master, mysql_slave, redis, swift} -> memcached -> {jobrunner, imagescaler};
+      elasticsearch -> jobrunner;
+      job_service_collector -> job_es_spacer;
+      subgraph r {
+        rank=same;
+        jobrunner, imagescaler;
+      }
+    }
+
+    // These define the view
+    job_service_collector [shape=point, width=0];
+    job_es_spacer [shape=point, width=0];
+    job_memcached_spacer [shape=point, width=0];
+    {jobrunner, imagescaler} -> job_service_collector -> {mysql_master, mysql_slave, redis, swift};
+    jobrunner:n -> elasticsearch;
+    {jobrunner, imagescaler} -> memcached [style=tapered, penwidth=10, arrowhead=none];
     /*
      * While technically Elasticsearch does forward request to itself for jobs as well as web
      * traffic, it makes the graph really hard to read when its on there so I've commented it
@@ -26,7 +44,7 @@ digraph WMF {
   }
   subgraph replication {
     edge [color="#880000"]
-    mysql_master -> mysql_slave;
+    mysql_master -> mysql_slave [constraint=false];
     elasticsearch -> elasticsearch [style=tapered, penwidth=10, arrowhead=none];
   }
 
