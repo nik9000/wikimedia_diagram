@@ -1,0 +1,22 @@
+digraph WMF {
+  splines=true;
+  sep = 1;
+  node [shape=box];
+  subgraph web_traffic {
+    the_internet -> ssl_terminators;
+    the_internet -> frontend_varnish [style=dashed];
+    ssl_terminators -> frontend_varnish;
+    frontend_varnish -> backend_varnish [style=tapered, penwidth=10, arrowhead=none];
+    backend_varnish -> apache;
+    apache -> hhvm;
+    hhvm -> {mysql, redis, elasticsearch, swift};
+    elasticsearch -> elasticsearch [style=tapered, penwidth=10, arrowhead=none];
+  }
+  subgraph jobs {
+    edge [color="#8800cc"]
+    jobrunner -> {mysql, redis, elasticsearch};
+    imagescaler -> {mysql, swift};
+  }
+
+  the_internet [shape=tripleoctagon];
+}

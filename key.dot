@@ -1,0 +1,20 @@
+digraph key {
+  nodesep=0.01;
+  rankdir="LR";
+  node [style=invis, shape=none, fixedsize=true, width=0, label=""];
+
+  job_color_from -> job_color [color="#8800cc"];
+  job_color [style=solid, fixedsize=false, label="Job Queue", fontcolor="#8800cc"]
+
+  web_color_from -> web_color;
+  web_color [style=solid, fixedsize=false, label="Web traffic"]
+
+  fancy_from -> fancy [style=tapered, penwidth=10, arrowhead=none];
+  fancy [style=solid, fixedsize=false, label="Fancy routing\nConsistent hashing\nor intelligent"]
+
+  disabled_from -> disabled [style=dashed];
+  disabled [style=solid, fixedsize=false, label="Theoretical\nCurrently disabled"]
+
+  noraml_from -> normal;
+  normal [style=solid, fixedsize=false, label="Normal load balancing\nLVS and round robin"]
+}
