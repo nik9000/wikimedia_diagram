@@ -12,9 +12,10 @@ digraph WMF {
     elasticsearch -> elasticsearch [style=tapered, penwidth=10, arrowhead=none];
   }
   subgraph jobs {
-    edge [color="#8800cc"]
-    jobrunner -> {mysql, redis, elasticsearch};
-    imagescaler -> {mysql, swift};
+    // These arrows are reversed so dot will throw these nodes under the web_traffic ones
+    edge [color="#8800cc", dir="back"]
+    {mysql, redis, elasticsearch} -> jobrunner;
+    {mysql, swift} -> imagescaler;
   }
 
   the_internet [shape=tripleoctagon];
