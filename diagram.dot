@@ -21,7 +21,6 @@ digraph WMF {
       {mysql_master, mysql_slave, redis, swift} -> job_service_collector -> {jobrunner, imagescaler};
       {mysql_master, mysql_slave, redis, swift} -> memcached -> {jobrunner, imagescaler};
       elasticsearch -> jobrunner;
-      job_service_collector -> job_es_spacer;
       subgraph r {
         rank=same;
         jobrunner, imagescaler;
@@ -30,8 +29,6 @@ digraph WMF {
 
     // These define the view
     job_service_collector [shape=point, width=0];
-    job_es_spacer [shape=point, width=0];
-    job_memcached_spacer [shape=point, width=0];
     {jobrunner, imagescaler} -> job_service_collector -> {mysql_master, mysql_slave, redis, swift};
     jobrunner:n -> elasticsearch;
     {jobrunner, imagescaler} -> memcached [style=tapered, penwidth=10, arrowhead=none];
