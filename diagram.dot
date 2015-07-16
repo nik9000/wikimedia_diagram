@@ -9,9 +9,13 @@ digraph WMF {
     backend_varnish -> {web, api} [headport="apache:n"];
     {web, api} -> web_service_collector [tailport="hhvm:s", arrowhead=none];
     web_service_collector [shape=point, width=0];
-    web_service_collector -> {mysql_master, mysql_slave, redis, elasticsearch, swift} [headport=n];
+    web_service_collector -> {mysql_master, mysql_slave, redis, elasticsearch, swift, logstash} [headport=n];
     web_service_collector -> memcached:n [arrowhead=diamond];
-    elasticsearch:s -> elasticsearch:e [arrowhead=diamond];
+    elasticsearch:n -> elasticsearch:e [arrowhead=diamond];
+    // I believe logstash uses the node client for Elasticsearch which can direct updates
+    // to the nodes that need them.
+    logstash -> logstash_elasticsearch [arrowhead=diamond];
+    logstash_elasticsearch:elasticsearch:n -> logstash_elasticsearch:elasticsearch:e [arrowhead=diamond];
   }
   subgraph jobs {
     edge [color="#8800cc", constraint=false, tailport=n, headport=s]
@@ -32,20 +36,28 @@ digraph WMF {
     job_service_collector -> {mysql_master, mysql_slave, redis, swift};
     job_service_collector -> memcached [arrowhead=diamond];
     jobrunner:n -> elasticsearch;
-    /*
-     * While technically Elasticsearch does forward request to itself for jobs as well as web
-     * traffic, it makes the graph really hard to read when its on there so I've commented it
-     * out. Hopefully its still obvious.
-     */
-    elasticsearch:s -> elasticsearch:e [arrowhead=diamond];
+    elasticsearch:n -> elasticsearch:e [arrowhead=diamond];
+  }
+  subgraph admin {
+    edge [constraint=false];
+    subgraph layout {
+      edge [style=invis, constraint=true];
+      logstash_elasticsearch -> admin;
+      event_logging -> admin;
+    }
+    admin [shape=egg];
+    admin -> logstash_elasticsearch:kibana [arrowhead=dot];
+    admin -> event_logging [arrowhead=dot];
   }
   subgraph replication {
     edge [color="#880000"]
     mysql_master -> mysql_slave [arrowhead=normal, constraint=false];
-    elasticsearch:s -> elasticsearch:e [arrowhead=diamond];
+    elasticsearch:n -> elasticsearch:e [arrowhead=diamond];
+    logstash_elasticsearch:elasticsearch:n -> logstash_elasticsearch:elasticsearch:e [arrowhead=diamond];
   }
 
   the_internet [shape=tripleoctagon];
-  web [shape=record, label="web | {<apache>apache | <hhvm>hhvm}"]
-  api [shape=record, label="api | {<apache>apache | <hhvm>hhvm}"]
+  web [shape=record, label="web | {<apache>apache | <hhvm>hhvm}"];
+  api [shape=record, label="api | {<apache>apache | <hhvm>hhvm}"];
+  logstash_elasticsearch [shape=record, label="{<elasticsearch> elasticsearch | <kibana>kibana}"]
 }
