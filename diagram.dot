@@ -9,6 +9,7 @@ digraph WMF {
     frontend_varnish -> backend_varnish [style=tapered, penwidth=10, arrowhead=none];
     backend_varnish -> {web:apache, api:hhvm};
     {web:hhvm, api:hhvm} -> {mysql_master, mysql_slave, redis, elasticsearch, swift};
+    {web:hhvm, api:hhvm} -> memcached [style=tapered, penwidth=10, arrowhead=none];
     elasticsearch -> elasticsearch [style=tapered, penwidth=10, arrowhead=none];
   }
   subgraph jobs {
