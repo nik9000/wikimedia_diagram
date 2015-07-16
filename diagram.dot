@@ -4,13 +4,12 @@ digraph WMF {
     the_internet -> ssl_terminators;
     the_internet -> frontend_varnish [style=dashed];
     ssl_terminators -> frontend_varnish;
-    frontend_varnish -> backend_varnish [style=tapered, penwidth=10, arrowhead=none];
+    frontend_varnish -> backend_varnish [arrowhead=diamond];
     backend_varnish -> {web, api} [headport="apache:n"];
     {web, api} -> web_service_collector [tailport="hhvm:s"];
     web_service_collector [shape=point, width=0];
     web_service_collector -> {mysql_master, mysql_slave, redis, elasticsearch, swift} [headport="n"];
-    web_service_collector -> memcached [style=invis];
-    {web, api} -> memcached [tailport="hhvm:s", headport="n", style=tapered, penwidth=10, arrowhead=none];
+    web_service_collector -> memcached [arrowhead=diamond];
     elasticsearch -> elasticsearch [style=tapered, penwidth=10, arrowhead=none];
   }
   subgraph jobs {
@@ -18,9 +17,8 @@ digraph WMF {
     // These edge defines all the layout
     subgraph layout {
       edge [style=invis, constraint=true];
-      {mysql_master, mysql_slave, redis, swift} -> job_service_collector -> {jobrunner, imagescaler};
-      {mysql_master, mysql_slave, redis, swift} -> memcached -> {jobrunner, imagescaler};
-      elasticsearch -> jobrunner;
+      {mysql_master, mysql_slave, redis, swift, memcached} -> job_service_collector -> {jobrunner, imagescaler};
+      elasticsearch -> jobrunner [minlen=2];
       subgraph r {
         rank=same;
         jobrunner, imagescaler;
@@ -30,8 +28,8 @@ digraph WMF {
     // These define the view
     job_service_collector [shape=point, width=0];
     {jobrunner, imagescaler} -> job_service_collector -> {mysql_master, mysql_slave, redis, swift};
+    job_service_collector -> memcached [arrowhead=diamond];
     jobrunner:n -> elasticsearch;
-    {jobrunner, imagescaler} -> memcached [style=tapered, penwidth=10, arrowhead=none];
     /*
      * While technically Elasticsearch does forward request to itself for jobs as well as web
      * traffic, it makes the graph really hard to read when its on there so I've commented it
