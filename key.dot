@@ -10,7 +10,7 @@ digraph key {
   web_color [style=solid, fixedsize=false, label="Web traffic"]
 
   fancy_from -> fancy [style=tapered, penwidth=10, arrowhead=none];
-  fancy [style=solid, fixedsize=false, label="Fancy routing\nConsistent hashing\nor intelligent"]
+  fancy [style=solid, fixedsize=false, label="Fancy routing\nConsistent hashing or\notherwise intelligent"]
 
   disabled_from -> disabled [style=dashed];
   disabled [style=solid, fixedsize=false, label="Theoretical\nCurrently disabled"]
