@@ -1,16 +1,17 @@
 digraph WMF {
   node [shape=box];
+  edge [arrowhead=box];
   subgraph web_traffic {
-    the_internet -> ssl_terminators;
-    the_internet -> frontend_varnish [style=dashed];
+    the_internet -> ssl_terminators [arrowhead=dot];
+    the_internet -> frontend_varnish [style=dashed, arrowhead=dot];
     ssl_terminators -> frontend_varnish;
     frontend_varnish -> backend_varnish [arrowhead=diamond];
     backend_varnish -> {web, api} [headport="apache:n"];
-    {web, api} -> web_service_collector [tailport="hhvm:s"];
+    {web, api} -> web_service_collector [tailport="hhvm:s", arrowhead=none];
     web_service_collector [shape=point, width=0];
-    web_service_collector -> {mysql_master, mysql_slave, redis, elasticsearch, swift} [headport="n"];
-    web_service_collector -> memcached [arrowhead=diamond];
-    elasticsearch -> elasticsearch [style=tapered, penwidth=10, arrowhead=none];
+    web_service_collector -> {mysql_master, mysql_slave, redis, elasticsearch, swift} [headport=n];
+    web_service_collector -> memcached:n [arrowhead=diamond];
+    elasticsearch:s -> elasticsearch:e [arrowhead=diamond];
   }
   subgraph jobs {
     edge [color="#8800cc", constraint=false, tailport=n, headport=s]
@@ -27,7 +28,8 @@ digraph WMF {
 
     // These define the view
     job_service_collector [shape=point, width=0];
-    {jobrunner, imagescaler} -> job_service_collector -> {mysql_master, mysql_slave, redis, swift};
+    {jobrunner, imagescaler} -> job_service_collector [arrowhead=none];
+    job_service_collector -> {mysql_master, mysql_slave, redis, swift};
     job_service_collector -> memcached [arrowhead=diamond];
     jobrunner:n -> elasticsearch;
     /*
@@ -35,12 +37,12 @@ digraph WMF {
      * traffic, it makes the graph really hard to read when its on there so I've commented it
      * out. Hopefully its still obvious.
      */
-    // elasticsearch -> elasticsearch [dir="forward", style=tapered, penwidth=10, arrowhead=none];
+    elasticsearch:s -> elasticsearch:e [arrowhead=diamond];
   }
   subgraph replication {
     edge [color="#880000"]
-    mysql_master -> mysql_slave [constraint=false];
-    elasticsearch -> elasticsearch [style=tapered, penwidth=10, arrowhead=none];
+    mysql_master -> mysql_slave [arrowhead=normal, constraint=false];
+    elasticsearch:s -> elasticsearch:e [arrowhead=diamond];
   }
 
   the_internet [shape=tripleoctagon];

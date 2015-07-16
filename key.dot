@@ -2,9 +2,13 @@ digraph key {
   nodesep=0.01;
   rankdir="LR";
   node [style=invis, shape=none, fixedsize=true, width=0, label=""];
+  edge [arrowhead=none];
+
+  disabled_from -> disabled [style=dashed];
+  disabled [style=solid, fixedsize=false, label="Theoretical or\nCurrently disabled"];
 
   replication_color_from -> replication_color [color="#880000"];
-  replication_color [style=solid, fixedsize=false, label="Replication Queue", fontcolor="#880000"];
+  replication_color [style=solid, fixedsize=false, label="Replication", fontcolor="#880000"];
 
   job_color_from -> job_color [color="#8800cc"];
   job_color [style=solid, fixedsize=false, label="Job Queue", fontcolor="#8800cc"];
@@ -12,12 +16,15 @@ digraph key {
   web_color_from -> web_color;
   web_color [style=solid, fixedsize=false, label="Web traffic"];
 
+  direct_from -> direct [arrowhead=normal];
+  direct [style=solid, fixedsize=false, label="Direct communiction\nips are configured"];
+
   fancy_from -> fancy [arrowhead=diamond];
-  fancy [style=solid, fixedsize=false, label="Fancy routing\nConsistent hashing or\notherwise intelligent"];
+  fancy [style=solid, fixedsize=false, label="Fancy routing like\nconsistent hashing"];
 
-  disabled_from -> disabled [style=dashed];
-  disabled [style=solid, fixedsize=false, label="Theoretical\nCurrently disabled"];
+  unknown_from -> unknown [arrowhead=dot];
+  unknown [style=solid, fixedsize=false, label="Unknown communiction"];
 
-  noraml_from -> normal;
-  normal [style=solid, fixedsize=false, label="Normal load balancing\nLVS and round robin"];
+  lvs_from -> lvs [arrowhead=box];
+  lvs [style=solid, fixedsize=false, label="LVS load balancing\nround robin"];
 }
