@@ -5,74 +5,78 @@
  -->
 <!-- Title: WMF Pages: 1 -->
 <svg width="440pt" height="576pt"
- viewBox="0.00 0.00 440.08 576.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 439.98 576.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 572)">
 <title>WMF</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-572 436.076,-572 436.076,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-572 435.983,-572 435.983,4 -4,4"/>
 <!-- the_internet -->
 <g id="node1" class="node"><title>the_internet</title>
-<polygon fill="none" stroke="black" points="263.537,-534.544 263.537,-549.456 230.418,-560 183.582,-560 150.463,-549.456 150.463,-534.544 183.582,-524 230.418,-524 263.537,-534.544"/>
-<polygon fill="none" stroke="black" points="267.506,-531.613 267.506,-552.387 231.03,-564 182.97,-564 146.494,-552.387 146.494,-531.613 182.97,-520 231.03,-520 267.506,-531.613"/>
-<polygon fill="none" stroke="black" points="271.474,-528.682 271.474,-555.318 231.642,-568 182.358,-568 142.526,-555.318 142.526,-528.682 182.358,-516 231.642,-516 271.474,-528.682"/>
-<text text-anchor="middle" x="207" y="-538.3" font-family="Times,serif" font-size="14.00">the_internet</text>
+<polygon fill="none" stroke="black" points="272.537,-534.544 272.537,-549.456 239.418,-560 192.582,-560 159.463,-549.456 159.463,-534.544 192.582,-524 239.418,-524 272.537,-534.544"/>
+<polygon fill="none" stroke="black" points="276.506,-531.613 276.506,-552.387 240.03,-564 191.97,-564 155.494,-552.387 155.494,-531.613 191.97,-520 240.03,-520 276.506,-531.613"/>
+<polygon fill="none" stroke="black" points="280.474,-528.682 280.474,-555.318 240.642,-568 191.358,-568 151.526,-555.318 151.526,-528.682 191.358,-516 240.642,-516 280.474,-528.682"/>
+<text text-anchor="middle" x="216" y="-538.3" font-family="Times,serif" font-size="14.00">the_internet</text>
 </g>
 <!-- ssl_terminators -->
 <g id="node2" class="node"><title>ssl_terminators</title>
-<polygon fill="none" stroke="black" points="296,-480 196,-480 196,-444 296,-444 296,-480"/>
-<text text-anchor="middle" x="246" y="-458.3" font-family="Times,serif" font-size="14.00">ssl_terminators</text>
+<polygon fill="none" stroke="black" points="305,-480 205,-480 205,-444 305,-444 305,-480"/>
+<text text-anchor="middle" x="255" y="-458.3" font-family="Times,serif" font-size="14.00">ssl_terminators</text>
 </g>
 <!-- the_internet&#45;&gt;ssl_terminators -->
 <g id="edge1" class="edge"><title>the_internet&#45;&gt;ssl_terminators</title>
-<path fill="none" stroke="black" d="M219.555,-515.891C223.761,-507.478 228.463,-498.073 232.723,-489.553"/>
-<polygon fill="black" stroke="black" points="235.953,-490.92 237.295,-480.411 229.692,-487.79 235.953,-490.92"/>
+<path fill="none" stroke="black" d="M228.555,-515.891C232.761,-507.478 237.463,-498.073 241.723,-489.553"/>
+<polygon fill="black" stroke="black" points="244.953,-490.92 246.295,-480.411 238.692,-487.79 244.953,-490.92"/>
 </g>
 <!-- frontend_varnish -->
 <g id="node3" class="node"><title>frontend_varnish</title>
-<polygon fill="none" stroke="black" points="261.25,-408 152.75,-408 152.75,-372 261.25,-372 261.25,-408"/>
-<text text-anchor="middle" x="207" y="-386.3" font-family="Times,serif" font-size="14.00">frontend_varnish</text>
+<polygon fill="none" stroke="black" points="270.25,-408 161.75,-408 161.75,-372 270.25,-372 270.25,-408"/>
+<text text-anchor="middle" x="216" y="-386.3" font-family="Times,serif" font-size="14.00">frontend_varnish</text>
 </g>
 <!-- the_internet&#45;&gt;frontend_varnish -->
 <g id="edge2" class="edge"><title>the_internet&#45;&gt;frontend_varnish</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M196.792,-515.921C192.899,-505.071 188.934,-492.106 187,-480 184.476,-464.2 184.129,-459.74 187,-444 188.606,-435.196 191.597,-425.954 194.786,-417.698"/>
-<polygon fill="black" stroke="black" points="198.121,-418.791 198.694,-408.212 191.649,-416.125 198.121,-418.791"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M205.792,-515.921C201.899,-505.071 197.934,-492.106 196,-480 193.476,-464.2 193.129,-459.74 196,-444 197.606,-435.196 200.597,-425.954 203.786,-417.698"/>
+<polygon fill="black" stroke="black" points="207.121,-418.791 207.694,-408.212 200.649,-416.125 207.121,-418.791"/>
 </g>
 <!-- ssl_terminators&#45;&gt;frontend_varnish -->
 <g id="edge3" class="edge"><title>ssl_terminators&#45;&gt;frontend_varnish</title>
-<path fill="none" stroke="black" d="M236.36,-443.697C231.873,-435.644 226.441,-425.894 221.476,-416.982"/>
-<polygon fill="black" stroke="black" points="224.454,-415.137 216.53,-408.104 218.339,-418.544 224.454,-415.137"/>
+<path fill="none" stroke="black" d="M245.36,-443.697C240.873,-435.644 235.441,-425.894 230.476,-416.982"/>
+<polygon fill="black" stroke="black" points="233.454,-415.137 225.53,-408.104 227.339,-418.544 233.454,-415.137"/>
 </g>
 <!-- backend_varnish -->
 <g id="node4" class="node"><title>backend_varnish</title>
-<polygon fill="none" stroke="black" points="261,-336 153,-336 153,-300 261,-300 261,-336"/>
-<text text-anchor="middle" x="207" y="-314.3" font-family="Times,serif" font-size="14.00">backend_varnish</text>
+<polygon fill="none" stroke="black" points="270,-336 162,-336 162,-300 270,-300 270,-336"/>
+<text text-anchor="middle" x="216" y="-314.3" font-family="Times,serif" font-size="14.00">backend_varnish</text>
 </g>
 <!-- frontend_varnish&#45;&gt;backend_varnish -->
 <g id="edge4" class="edge"><title>frontend_varnish&#45;&gt;backend_varnish</title>
-<polygon fill="black" stroke="none" stroke-width="10" points="212,-371.697 211.768,-370.047 211.531,-368.355 211.288,-366.627 211.041,-364.866 210.789,-363.078 210.535,-361.267 210.278,-359.438 210.019,-357.595 209.759,-355.743 209.498,-353.886 209.237,-352.03 208.977,-350.179 208.718,-348.337 208.462,-346.51 208.208,-344.701 207.957,-342.916 207.71,-341.159 207.468,-339.435 207.231,-337.749 207,-336.104 207,-336.104 206.769,-337.749 206.532,-339.435 206.29,-341.159 206.043,-342.916 205.792,-344.701 205.538,-346.51 205.282,-348.337 205.023,-350.179 204.763,-352.03 204.502,-353.886 204.241,-355.743 203.981,-357.595 203.722,-359.438 203.465,-361.267 203.211,-363.078 202.959,-364.866 202.712,-366.627 202.469,-368.355 202.232,-370.047 202,-371.697 212,-371.697"/>
+<polygon fill="black" stroke="none" stroke-width="10" points="221,-371.697 220.768,-370.047 220.531,-368.355 220.288,-366.627 220.041,-364.866 219.789,-363.078 219.535,-361.267 219.278,-359.438 219.019,-357.595 218.759,-355.743 218.498,-353.886 218.237,-352.03 217.977,-350.179 217.718,-348.337 217.462,-346.51 217.208,-344.701 216.957,-342.916 216.71,-341.159 216.468,-339.435 216.231,-337.749 216,-336.104 216,-336.104 215.769,-337.749 215.532,-339.435 215.29,-341.159 215.043,-342.916 214.792,-344.701 214.538,-346.51 214.282,-348.337 214.023,-350.179 213.763,-352.03 213.502,-353.886 213.241,-355.743 212.981,-357.595 212.722,-359.438 212.465,-361.267 212.211,-363.078 211.959,-364.866 211.712,-366.627 211.469,-368.355 211.232,-370.047 211,-371.697 221,-371.697"/>
 </g>
 <!-- web -->
 <g id="node5" class="node"><title>web</title>
-<polygon fill="none" stroke="black" points="144,-217 144,-263 198,-263 198,-217 144,-217"/>
-<text text-anchor="middle" x="171" y="-247.8" font-family="Times,serif" font-size="14.00">apache</text>
-<polyline fill="none" stroke="black" points="144,-240 198,-240 "/>
-<text text-anchor="middle" x="171" y="-224.8" font-family="Times,serif" font-size="14.00">hhvm</text>
+<polygon fill="none" stroke="black" points="115.5,-217 115.5,-263 208.5,-263 208.5,-217 115.5,-217"/>
+<text text-anchor="middle" x="135" y="-236.3" font-family="Times,serif" font-size="14.00">web</text>
+<polyline fill="none" stroke="black" points="154.5,-217 154.5,-263 "/>
+<text text-anchor="middle" x="181.5" y="-247.8" font-family="Times,serif" font-size="14.00">apache</text>
+<polyline fill="none" stroke="black" points="154.5,-240 208.5,-240 "/>
+<text text-anchor="middle" x="181.5" y="-224.8" font-family="Times,serif" font-size="14.00">hhvm</text>
 </g>
 <!-- backend_varnish&#45;&gt;web -->
 <g id="edge5" class="edge"><title>backend_varnish&#45;&gt;web</title>
-<path fill="none" stroke="black" d="M198.831,-299.754C194.972,-291.609 190.244,-281.627 185.788,-272.219"/>
-<polygon fill="black" stroke="black" points="188.908,-270.63 181.464,-263.091 182.582,-273.627 188.908,-270.63"/>
+<path fill="none" stroke="black" d="M203.747,-299.754C197.778,-291.354 190.422,-281.001 183.556,-271.339"/>
+<polygon fill="black" stroke="black" points="186.341,-269.215 177.696,-263.091 180.635,-273.27 186.341,-269.215"/>
 </g>
 <!-- api -->
 <g id="node6" class="node"><title>api</title>
-<polygon fill="none" stroke="black" points="252,-217 252,-263 306,-263 306,-217 252,-217"/>
-<text text-anchor="middle" x="279" y="-247.8" font-family="Times,serif" font-size="14.00">apache</text>
-<polyline fill="none" stroke="black" points="252,-240 306,-240 "/>
-<text text-anchor="middle" x="279" y="-224.8" font-family="Times,serif" font-size="14.00">hhvm</text>
+<polygon fill="none" stroke="black" points="244.5,-217 244.5,-263 331.5,-263 331.5,-217 244.5,-217"/>
+<text text-anchor="middle" x="261" y="-236.3" font-family="Times,serif" font-size="14.00">api</text>
+<polyline fill="none" stroke="black" points="277.5,-217 277.5,-263 "/>
+<text text-anchor="middle" x="304.5" y="-247.8" font-family="Times,serif" font-size="14.00">apache</text>
+<polyline fill="none" stroke="black" points="277.5,-240 331.5,-240 "/>
+<text text-anchor="middle" x="304.5" y="-224.8" font-family="Times,serif" font-size="14.00">hhvm</text>
 </g>
 <!-- backend_varnish&#45;&gt;api -->
 <g id="edge6" class="edge"><title>backend_varnish&#45;&gt;api</title>
-<path fill="none" stroke="black" d="M223.338,-299.754C231.537,-291.099 241.7,-280.372 251.089,-270.462"/>
-<polygon fill="black" stroke="black" points="253.735,-272.757 258.072,-263.091 248.654,-267.943 253.735,-272.757"/>
+<path fill="none" stroke="black" d="M232.338,-299.754C240.537,-291.099 250.7,-280.372 260.089,-270.462"/>
+<polygon fill="black" stroke="black" points="262.735,-272.757 267.072,-263.091 257.654,-267.943 262.735,-272.757"/>
 </g>
 <!-- mysql_master -->
 <g id="node7" class="node"><title>mysql_master</title>
@@ -81,8 +85,8 @@
 </g>
 <!-- web&#45;&gt;mysql_master -->
 <g id="edge7" class="edge"><title>web&#45;&gt;mysql_master</title>
-<path fill="none" stroke="black" d="M198.03,-222.696C216.09,-211.803 240.08,-197.333 259.917,-185.367"/>
-<polygon fill="black" stroke="black" points="261.948,-188.23 268.704,-180.068 258.333,-182.236 261.948,-188.23"/>
+<path fill="none" stroke="black" d="M201.41,-216.813C219.172,-206.814 240.092,-195.037 257.825,-185.054"/>
+<polygon fill="black" stroke="black" points="259.777,-187.972 266.774,-180.016 256.343,-181.872 259.777,-187.972"/>
 </g>
 <!-- mysql_slave -->
 <g id="node8" class="node"><title>mysql_slave</title>
@@ -91,7 +95,7 @@
 </g>
 <!-- web&#45;&gt;mysql_slave -->
 <g id="edge8" class="edge"><title>web&#45;&gt;mysql_slave</title>
-<path fill="none" stroke="black" d="M143.614,-222.158C116.184,-203.148 80.7352,-171.311 101,-144 128.901,-106.397 182.746,-94.5312 223.376,-91.2274"/>
+<path fill="none" stroke="black" d="M131.644,-216.935C108.409,-197.313 83.1304,-168.083 101,-144 128.901,-106.397 182.746,-94.5312 223.376,-91.2274"/>
 <polygon fill="black" stroke="black" points="223.651,-94.7169 233.397,-90.5615 223.187,-87.7324 223.651,-94.7169"/>
 </g>
 <!-- redis -->
@@ -101,8 +105,8 @@
 </g>
 <!-- web&#45;&gt;redis -->
 <g id="edge9" class="edge"><title>web&#45;&gt;redis</title>
-<path fill="none" stroke="black" d="M143.915,-224.705C121.131,-212.68 88.356,-195.382 63.3018,-182.159"/>
-<polygon fill="black" stroke="black" points="64.931,-179.062 54.4534,-177.489 61.6636,-185.252 64.931,-179.062"/>
+<path fill="none" stroke="black" d="M122.59,-216.813C103.814,-206.244 81.5106,-193.687 63.1715,-183.363"/>
+<polygon fill="black" stroke="black" points="64.683,-180.198 54.252,-178.342 61.249,-186.297 64.683,-180.198"/>
 </g>
 <!-- elasticsearch -->
 <g id="node10" class="node"><title>elasticsearch</title>
@@ -111,8 +115,8 @@
 </g>
 <!-- web&#45;&gt;elasticsearch -->
 <g id="edge10" class="edge"><title>web&#45;&gt;elasticsearch</title>
-<path fill="none" stroke="black" d="M165.697,-216.609C163.75,-208.391 161.525,-198.994 159.486,-190.387"/>
-<polygon fill="black" stroke="black" points="162.834,-189.336 157.124,-180.412 156.023,-190.95 162.834,-189.336"/>
+<path fill="none" stroke="black" d="M159.348,-216.609C158.375,-208.391 157.262,-198.994 156.243,-190.387"/>
+<polygon fill="black" stroke="black" points="159.714,-189.931 155.062,-180.412 152.762,-190.754 159.714,-189.931"/>
 </g>
 <!-- swift -->
 <g id="node11" class="node"><title>swift</title>
@@ -121,33 +125,33 @@
 </g>
 <!-- web&#45;&gt;swift -->
 <g id="edge11" class="edge"><title>web&#45;&gt;swift</title>
-<path fill="none" stroke="black" d="M198.048,-230.332C240.811,-216.616 321.7,-190.616 352.008,-179.925"/>
-<polygon fill="black" stroke="black" points="353.477,-183.113 361.642,-176.361 351.048,-176.548 353.477,-183.113"/>
+<path fill="none" stroke="black" d="M208.712,-224.213C217.444,-221.469 226.497,-218.637 235,-216 284.507,-200.649 300.156,-199.807 352.242,-180.039"/>
+<polygon fill="black" stroke="black" points="353.587,-183.271 361.661,-176.411 351.072,-176.739 353.587,-183.271"/>
 </g>
 <!-- api&#45;&gt;mysql_master -->
 <g id="edge12" class="edge"><title>api&#45;&gt;mysql_master</title>
-<path fill="none" stroke="black" d="M284.303,-216.609C286.25,-208.391 288.475,-198.994 290.514,-190.387"/>
-<polygon fill="black" stroke="black" points="293.977,-190.95 292.876,-180.412 287.166,-189.336 293.977,-190.95"/>
+<path fill="none" stroke="black" d="M290.652,-216.609C291.625,-208.391 292.738,-198.994 293.757,-190.387"/>
+<polygon fill="black" stroke="black" points="297.238,-190.754 294.938,-180.412 290.286,-189.931 297.238,-190.754"/>
 </g>
 <!-- api&#45;&gt;mysql_slave -->
 <g id="edge13" class="edge"><title>api&#45;&gt;mysql_slave</title>
-<path fill="none" stroke="black" d="M306.101,-233.507C357.016,-221.928 458.913,-192.057 425,-144 403.337,-113.302 362.259,-100.279 328.712,-94.8062"/>
+<path fill="none" stroke="black" d="M331.842,-228.165C381.993,-213.578 453.703,-184.675 425,-144 403.337,-113.302 362.259,-100.279 328.712,-94.8062"/>
 <polygon fill="black" stroke="black" points="328.97,-91.3072 318.572,-93.3389 327.968,-98.2351 328.97,-91.3072"/>
 </g>
 <!-- api&#45;&gt;redis -->
 <g id="edge14" class="edge"><title>api&#45;&gt;redis</title>
-<path fill="none" stroke="black" d="M251.694,-230.116C238.257,-225.785 221.803,-220.543 207,-216 157.611,-200.842 100.335,-184.125 63.8987,-173.597"/>
-<polygon fill="black" stroke="black" points="64.7765,-170.208 54.1982,-170.799 62.836,-176.934 64.7765,-170.208"/>
+<path fill="none" stroke="black" d="M244.155,-224.484C235.192,-221.605 225.808,-218.654 217,-216 164.025,-200.038 102.24,-183.114 63.8644,-172.8"/>
+<polygon fill="black" stroke="black" points="64.7256,-169.407 54.1604,-170.198 62.9131,-176.168 64.7256,-169.407"/>
 </g>
 <!-- api&#45;&gt;elasticsearch -->
 <g id="edge15" class="edge"><title>api&#45;&gt;elasticsearch</title>
-<path fill="none" stroke="black" d="M251.97,-222.696C233.91,-211.803 209.92,-197.333 190.083,-185.367"/>
-<polygon fill="black" stroke="black" points="191.667,-182.236 181.296,-180.068 188.052,-188.23 191.667,-182.236"/>
+<path fill="none" stroke="black" d="M248.59,-216.813C230.828,-206.814 209.908,-195.037 192.175,-185.054"/>
+<polygon fill="black" stroke="black" points="193.657,-181.872 183.226,-180.016 190.223,-187.972 193.657,-181.872"/>
 </g>
 <!-- api&#45;&gt;swift -->
 <g id="edge16" class="edge"><title>api&#45;&gt;swift</title>
-<path fill="none" stroke="black" d="M306.191,-220.213C321.222,-209.829 340.012,-196.846 355.893,-185.874"/>
-<polygon fill="black" stroke="black" points="358.136,-188.578 364.374,-180.014 354.157,-182.819 358.136,-188.578"/>
+<path fill="none" stroke="black" d="M317.485,-216.813C330.285,-207.181 345.279,-195.899 358.221,-186.16"/>
+<polygon fill="black" stroke="black" points="360.501,-188.825 366.387,-180.016 356.292,-183.232 360.501,-188.825"/>
 </g>
 <!-- mysql_master&#45;&gt;mysql_slave -->
 <g id="edge25" class="edge"><title>mysql_master&#45;&gt;mysql_slave</title>

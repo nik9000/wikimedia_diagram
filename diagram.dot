@@ -30,6 +30,6 @@ digraph WMF {
   }
 
   the_internet [shape=tripleoctagon];
-  web [shape=record, label="{<apache>apache | <hhvm>hhvm}"]
-  api [shape=record, label="{<apache>apache | <hhvm>hhvm}"]
+  web [shape=record, label="web | {<apache>apache | <hhvm>hhvm}"]
+  api [shape=record, label="api | {<apache>apache | <hhvm>hhvm}"]
 }
