@@ -7,9 +7,8 @@ digraph WMF {
     the_internet -> frontend_varnish [style=dashed];
     ssl_terminators -> frontend_varnish;
     frontend_varnish -> backend_varnish [style=tapered, penwidth=10, arrowhead=none];
-    backend_varnish -> apache;
-    apache -> hhvm;
-    hhvm -> {mysql, redis, elasticsearch, swift};
+    backend_varnish -> {web:apache, api:hhvm};
+    {web:hhvm, api:hhvm} -> {mysql, redis, elasticsearch, swift};
     elasticsearch -> elasticsearch [style=tapered, penwidth=10, arrowhead=none];
   }
   subgraph jobs {
@@ -19,4 +18,6 @@ digraph WMF {
   }
 
   the_internet [shape=tripleoctagon];
+  web [shape=record, label="{<apache>apache | <hhvm>hhvm}"]
+  api [shape=record, label="{<apache>apache | <hhvm>hhvm}"]
 }
